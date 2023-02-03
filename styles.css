@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap');
+
+:root {
+  --primary:#6200EE;
+  --primaryVariant:3700B3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cls-1{fill:#9a00ff;}
+.cls-2{fill:#f257ff;opacity:0.5;}
+.cls-3{font-size:136.19px;font-family:Inter, Century Gothic;}
+
+.logoSvg {
+  height:3.5rem;
+}
+
+.svgDiv {
+  height: 5rem;
+  padding: 1.5rem;
+}
+
+
+.loginContainer {
+  margin: auto;
+
+  border-radius: 2%;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
+  overflow: hidden;
+  display: flex;
+}
+
+.form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+}
+
+input[type="text"] {
+  color: red;
+  height: 70%;
+  width: 100%;
+}
+
+input[type="password"] {
+  color: purple;
+  height:70%;
+  width: 100%;
+}
+
+input {
+  width: 50%;
+}
+
+.welcome {
+  font-family: "Inter";
+  font-weight: 800;
+  font-size: 3.5rem;
+}
+
+.slogan {
+  font-family: Inter;
+  color:rgb(71 85 105/1);
+  font-size: 1.125rem;
+}
+
+.topLoginContainer {
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+
+.loginLabel {
+  font-family: Inter;
+}
