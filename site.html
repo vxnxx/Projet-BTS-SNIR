@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="feurtest">
-        <span class="oui">oui</span>
-    </div>
+    <form class="form" action="/php/test.php" method="post">
+        <div class="usernameDiv">
+          <label class="loginLabel">Salle</label>
+          <input type="text" name="login" placeholder="" />
+        </div>
+        <div class="passwordDiv">
+        </div>
+        <input type="submit" value="Choisir ma salle" name="envoi" />
+      </form>
 </body>
 </html>

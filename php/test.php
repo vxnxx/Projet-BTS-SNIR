@@ -24,13 +24,13 @@ if (empty($login) || empty($password)) {
 
 if (isset($_POST['envoi'])) {
     if (mysqli_num_rows($results) != 0 && $password == $sqlPassword && $isEmpty == False) {
-        header('Location: http://127.0.0.1:5555/site.html');
+        header('Location: http://localhost/pbs/site.html');
     } else {
         if ($isEmpty) {
-            header('Location: http://127.0.0.1:5555/index.html');
+            header('Location: http://localhost/index.html');
 
             }  else {
-                header('Location: http://127.0.0.1:5555/index.html');
+                header('Location: http://localhost/index.html');
 
         }
     }
