@@ -1,0 +1,13 @@
+root
+lamoula
+
+
+
+if(isset($_POST['envoi'])) {
+    if($login == 'feur' && $password == 'feur41') {
+        header('Location: http://127.0.0.1:5555/site.html');
+    } else {
+        header('Location: http://127.0.0.1:5555/index.html');
+    }
+
+}

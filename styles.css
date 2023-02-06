@@ -11,9 +11,6 @@
   box-sizing: border-box;
 }
 
-body {
-}
-
 body::after {
   content: "";
   background: url("img/boreal.png");
@@ -116,7 +113,7 @@ input[type="submit"]:hover {
 
 
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 650px) {
   .form{
     width: 100%;
     margin: 5vh 0 0 0;
