@@ -110,6 +110,12 @@ input[type="submit"]:hover {
   font-size: .875rem;
 }
 
+.feurtest {
+  border: 1px solid red;
+  width: 50%;
+  height: 50%;
+}
+
 
 
 
