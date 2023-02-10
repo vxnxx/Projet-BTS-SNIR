@@ -18,7 +18,7 @@ if (empty($_SESSION['utilisateur'])) {
       <span class="welcome">Veuillez vous connecter avant d'acceder a AirQuality</span>
       <span class="slogan"> Vous ne pouvez pas acceder a ce contenu si vous n'etes pas connecté a un compte</span>
       <a href="http://172.10.10.54/pbs/index.html">
-      <button class="bouton" type="button">Retourner a l'accueil</button>
+        <button class="bouton" type="button">Retourner a l'accueil</button>
       </a>
     </div>
   </body>
@@ -40,7 +40,7 @@ if (empty($_SESSION['utilisateur'])) {
   </head>
 
   <body>
-    <form class="form" action="http://172.10.10.54/pbs/php/test2.php" method="post">
+    <form class="form" action="http://172.10.10.54/pbs/test2.php" method="post">
       <div class="usernameDiv">
         <label class="loginLabel">Salle</label>
         <select class="" name="classeSelect">
