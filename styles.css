@@ -50,6 +50,13 @@ body::after {
   margin: 0 2rem 0 2rem;
 }
 
+.welcome {
+  font-family: "Inter";
+  font-weight: 800;
+  font-size: 3.5rem;
+
+}
+
 .slogan {
   font-family: Inter;
   color:rgb(71 85 105/1);
@@ -94,16 +101,29 @@ input[type="submit"] {
   font-size:medium;
 }
 
+.bouton {
+  background-color: #C52BFF;
+  box-shadow: 0px 2px 6px -1px rgba(154, 0, 255, 1);
+  color: white;
+  border:none;
+  font-size:medium;
+  border-radius: 0.375rem;
+  font-family: Inter;
+  padding: 0 0.375rem 0 0.375rem;
+  height: 2.5rem;
+}
+
+.bouton:hover {
+  background-color: #f257ff;
+  cursor: pointer;
+}
+
 input[type="submit"]:hover {
   background-color: #f257ff;
   cursor: pointer;
 }
 
-.welcome {
-  font-family: "Inter";
-  font-weight: 800;
-  font-size: 3.5rem;
-}
+
 
 .loginLabel {
   font-family: Inter;

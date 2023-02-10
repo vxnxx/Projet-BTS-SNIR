@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 session_start();
 
 $select = $_POST['classeSelect'];
-$login = $_SESSION['login'];
+$login = $_SESSION['utilisateur'];
 
 echo("Vous etes $login et vous avez choisis la classe n°$select");
 ?>
