@@ -136,6 +136,39 @@ input[type="submit"]:hover {
   height: 50%;
 }
 
+.classeSelect {
+  position: relative;
+  top: 50px;
+  font-family: Inter;
+  font-size: .875rem;
+  border-radius: .375rem;
+  height: 1.750rem;
+  background-color: white;
+  outline: none;
+}
+
+.classeSelect:focus {
+  border:3px solid #f257ff;
+}
+
+.center {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvasDiv {
+  margin: 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction:column;
+}
+
+.phpLabel {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
 
 
 

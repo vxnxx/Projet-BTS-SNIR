@@ -40,10 +40,10 @@ if (empty($_SESSION['utilisateur'])) {
   </head>
 
   <body>
-    <form class="form" action="http://172.10.10.54/pbs/test2.php" method="post">
-      <div class="usernameDiv">
-        <label class="loginLabel">Salle</label>
-        <select class="" name="classeSelect">
+    <form class="form center" action="http://172.10.10.56/pbs/test2.php" method="post">
+      <div class="selectDiv">
+        <label class="loginLabel classeSelect">Salle : </label>
+        <select class="classeSelect" name="classeSelect">
           <option value="">Selectionnez votre salle de classe</option>"
           <option value="C204">C204</option>
           <option value="C205">C205</option>

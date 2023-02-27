@@ -33,13 +33,13 @@ if (empty($login) || empty($password)) {
 
 if (isset($_POST['envoi'])) {
     if (mysqli_num_rows($results) != 0 && $password == $sqlPassword && $isEmpty == False) {
-        header('Location: http://172.10.10.54/pbs/site.php');
+        header('Location: http://172.10.10.56/pbs/site.php');
     } else {
         if ($isEmpty) {
-            header('Location: http://172.10.10.54/pbs/index.html');
+            header('Location: http://172.10.10.56/pbs/index.html');
 
             }  else {
-                header('Location: http://172.10.10.54/pbs/index.html');
+                header('Location: http://172.10.10.56/pbs/index.html');
 
         }
     }
