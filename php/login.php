@@ -11,7 +11,7 @@ $password = $_POST['password'];
 
 $_SESSION['utilisateur'] = $login;
 
-$con = mysqli_connect('172.10.10.64', 'evan', 'feur', 'AirQuality');
+$con = mysqli_connect('172.10.10.82', 'evan1', 'feur', 'AirQuality');
 if ($con->connect_error) {
     die("Erreur : 1conn->connect_error");
 }

@@ -1,43 +1,9 @@
-
-//simulation requete sql
-data1 = [];
-data2 = [];
-labels = [];
-
-function generateRandom() {
-    return(Math.random() * 31);
-}
-
-function remplirData() {
-    data1.push(Number(generateRandom()));
-    data2.push(Number(generateRandom()));
-
-
-    if(data1.length <= 10 && data2.length <= 10) {
-    labels.push(Number(data1.length));
-    }
-
-
-    if(data1.length() >= 10 && data2.length() >= 10) {
-        data1.shift();
-        data2.shift();
-        labels = [1,2,3,4,5,6,7,8,9,10];
-    }
-
-    console.log("rempli");
-    console.log(labels);
-    console.log(data1);
-    console.log(data2);
-}
-
-
-function generateCharts() {
-new Chart("tempChart", {
+var tempChart = new Chart("tempChart", {
     type: "line",
     data: {
-        labels: labels,
+        labels: [1,2,3,4,5,6,7,8,9,10],
         datasets: [{
-        data: data1,
+        data: [],
         borderColor: "magenta",
         fill: false
         }]
@@ -47,14 +13,14 @@ new Chart("tempChart", {
         display: false
         }
     }
-    });
+});
 
-    new Chart("co2Chart", {
+var co2Chart = new Chart("co2Chart", {
     type: "line",
     data: {
-        labels: labels,
+        labels: [1,2,3,4,5,6,7,8,9,10],
         datasets: [{
-        data: data2,
+        data: [],
         borderColor: "black",
         fill: false
         }]
@@ -64,8 +30,36 @@ new Chart("tempChart", {
         display: false
         }
     }
-    });
+});
+
+tempData = tempChart.data.datasets[0].data;
+co2Data = co2Chart.data.datasets[0].data;
+
+tempChart.update();
+
+
+function remplirDataTempChart() {
+    if(tempData.length < 10) {
+    tempData.push(Number(Math.random()*31));
+    } else {
+        tempData.shift();
+        tempData.push(Number(Math.random()*31));
+    }
+
+
+    tempChart.update();
+}
+function remplirDataco2Chart() {
+    if(co2Data.length < 10) {
+    co2Data.push(Number(Math.random()*31));
+    } else {
+        co2Data.shift();
+        co2Data.push(Number(Math.random()*31));
+    }
+
+
+    co2Chart.update();
 }
 
-setInterval(remplirData, 3000);
-setInterval(generateCharts, 3000);
+setInterval(remplirDataTempChart, 1500);
+setInterval(remplirDataco2Chart, 1500);
