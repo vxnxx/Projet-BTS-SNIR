@@ -50,6 +50,14 @@
           <label class="loginLabel">Mot de passe</label>
           <input type="password" placeholder="" name="password" />
         </div>
+        <?php
+            if (isset($_GET['empty'])) {
+                echo ('<span class="error">Veuillez remplir les champs emails et/ou mots de passe</span>');
+            }
+            if (isset($_GET['invalidPassword'])) {
+                echo ('<span class="error">L\'identifiant ou le mot de passe est invalide</span>');
+            }
+            ?>
         <input type="submit" value="Se Connecter" name="envoi" />
       </form>
     </div>

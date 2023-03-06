@@ -53,6 +53,13 @@ if (empty($_SESSION['utilisateur'])) {
       </div>
       <input type="submit" value="Choisir ma salle" name="envoi" />
     </form>
+    <form class="form center" action="http://172.10.10.56/pbs/date.php" method="post">
+      <?php
+      if($_SESSION['utilisateur'] == "gestionnaire") {
+      echo("<input  class=\"mt-2\"type=\"submit\" value=\"Consulter l'historique\" name=\"historique\">");
+      }
+      ?>
+    </form>
   </body>
 
   </html>

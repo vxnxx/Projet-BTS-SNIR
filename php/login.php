@@ -36,10 +36,10 @@ if (isset($_POST['envoi'])) {
         header('Location: http://172.10.10.56/pbs/site.php');
     } else {
         if ($isEmpty) {
-            header('Location: http://172.10.10.56/pbs/index.html');
+            header('Location: http://172.10.10.56/pbs/index.php?empty=True');
 
             }  else {
-                header('Location: http://172.10.10.56/pbs/index.html');
+                header('Location: http://172.10.10.56/pbs/index.php?invalidPassword=True');
 
         }
     }

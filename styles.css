@@ -170,6 +170,16 @@ input[type="submit"]:hover {
   font-size: 1rem;
 }
 
+.error {
+  font-family: Inter;
+  text-align: center;
+  color: red;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
 
 
 @media screen and (max-width: 650px) {
