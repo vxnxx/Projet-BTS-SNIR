@@ -7,22 +7,34 @@ session_start();
 
 $date = $_POST['date'];
 
+$sql = "SELECT * FROM Valeurs WHERE date = '$date'";
 
 $con = mysqli_connect('172.10.10.82', 'evan1', 'feur', 'AirQuality');
 if ($con->connect_error) {
     die("Erreur : 1conn->connect_error");
 }
 
+$result = $con->query($sql);
 
-$creds = ($con->real_query("SELECT `humidité`,`température` FROM `Valeurs` WHERE `date` = '$date'"));
-$results = $con->use_result();
 
-foreach($results as $row) {
-    $temperature = $row['température'];
-    $humidite = $row['humidité'];
+if ($result->num_rows > 0) {
+
+    while($row = $result->fetch_assoc()) {
+        echo("ID : " . $row['id'] . "<br>");
+        echo("Temp : " . $row['température'] . "<br>");
+        echo("Humidité : " . $row['humidité'] . "<br>");
+        echo("Date : " . $row['date'] . "<br>");
+        echo("Horaire : " . $row['horaire'] . "<br>");
+        echo("<br>");
+    }
+} else {
+    echo "0 résultats";
 }
 
-echo("temp : $temperature  humide : $humidite \n");
-var_dump($temperature);
-var_dump($humidite);
+
+$con->close();
+
+
+
+
 ?>

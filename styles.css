@@ -180,6 +180,11 @@ input[type="submit"]:hover {
   margin-top: 2rem;
 }
 
+.hist {
+  position: relative;
+  top: 15px;
+}
+
 
 
 @media screen and (max-width: 650px) {

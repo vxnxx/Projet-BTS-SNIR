@@ -14,9 +14,22 @@
 
 <body>
     <form class="form mt-2" action="php/datePick.php" method="post">
-        <label class="phpLabel">Veuillez choisir la date pour laquelle vous désirez voir l'historique</label>
+        
+        <label class="phpLabel">Veuillez choisir la salle et la date pour laquelle vous désirez voir l'historique</label>
+
+        <select class="classeSelect hist" name="classeSelect"">
+          <option value="">Selectionnez votre salle de classe</option>"
+          <option value="C204">C204</option>
+          <option value="C205">C205</option>
+        </select>
+
+
         <input type="text" class="flatpickr" name="date">
         <input type="submit" value="Choisir la date">
+        <div class="selectDiv">
+
+
+      </div>
     </form>
 
     <script>
