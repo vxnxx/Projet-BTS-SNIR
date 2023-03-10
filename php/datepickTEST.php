@@ -24,23 +24,25 @@ if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
         $requetes[] = new Requete( $row['id'], $salle, $row['date'], $row['horaire'], $row['humidité'] ,$row['température']);
+        echo("Salle : " . $salle . "<br>");
+        echo("ID : " . $row['id'] . "<br>");
+        echo("Temp : " . $row['température'] . "<br>");
+        echo("Humidité : " . $row['humidité'] . "<br>");
+        echo("Date : " . $row['date'] . "<br>");
+        echo("Horaire : " . $row['horaire'] . "<br>");
+        echo("<br>");
     }
 } else {
     echo "0 résultats";
 }
 
-$listHoraires = [];
-
-foreach ($requetes as $requete) {
-    $listHoraires[] = strtotime($requete->horaire);
+foreach($requetes as $requete) {
+    print_r($requete);
+    echo("<br>");
 }
 
-sort($listHoraires);
+echo("test : " . $requetes[1]->horaire);
 
-foreach($listHoraires as $Horaires) {
-    echo(date("H:i:s",$Horaires));
-    echo("<br/>");
-}
 
 
 $con->close();
