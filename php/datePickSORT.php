@@ -32,17 +32,30 @@ if ($result->num_rows > 0) {
 $listHoraires = [];
 
 foreach ($requetes as $requete) {
-    $listHoraires[] = $requete->horaire;
-    $listDates[] = $requete->date;
-    $listHumidite[] = $requete->humidite;
-    $listTemperature[] = $requete->temperature;
+    $listHoraires[] = strtotime($requete->horaire);
 }
-$_SESSION['listHoraires'] = $listHoraires;
-$_SESSION['listDates'] = $listDates;
-$_SESSION['listHumidite'] = $listHumidite;
-$_SESSION['listTemperatur'] = $listTemperature;
 
-header('Location: http://172.10.10.56/pbs/historique.php');
+sort($listHoraires);
+$finalHoraires = [];
+
+foreach($listHoraires as $Horaires) {
+    $finalHoraires[] = date("H:i:s",$Horaires);
+}
+
+$_SESSION['listHoraires'] = $finalHoraires;
+
+$matchingID = [];
+
+foreach ($requetes as $requete) {
+    if (in_array($requete->horaire, $finalHoraires)) {
+        $matchingID[] = $requete->id;
+    }
+}
+
+print_r($finalHoraires);
+echo("<br>");
+print_r($matchingID);
+//header('Location: http://172.10.10.56/pbs/historique.php');
 
 
 $con->close();
