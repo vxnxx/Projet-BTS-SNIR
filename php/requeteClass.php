@@ -5,16 +5,16 @@ Class Requete {
     public $salle;
     public $date;
     public $horaire;
-    public $humidite;
+    public $co2;
     public $temperature;
 
     
-    public function __construct($id, $salle, $date, $horaire, $humidite, $temperature) {
+    public function __construct($id, $salle, $date, $horaire, $co2, $temperature) {
         $this->id = $id;
         $this->salle = $salle;
         $this->date = $date;
         $this->horaire = $horaire;
-        $this->humidite = $humidite;
+        $this->co2 = $co2;
         $this->temperature = $temperature;
         
     }

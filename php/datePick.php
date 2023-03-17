@@ -23,7 +23,7 @@ $requetes = [];
 if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
-        $requetes[] = new Requete( $row['id'], $salle, $row['date'], $row['horaire'], $row['humidité'] ,$row['température']);
+        $requetes[] = new Requete( $row['id'], $salle, $row['date'], $row['horaire'], $row['CO2'] ,$row['température']);
     }
 } else {
     echo "0 résultats";
@@ -34,13 +34,14 @@ $listHoraires = [];
 foreach ($requetes as $requete) {
     $listHoraires[] = $requete->horaire;
     $listDates[] = $requete->date;
-    $listHumidite[] = $requete->humidite;
+    $listC02[] = $requete->co2;
     $listTemperature[] = $requete->temperature;
 }
+
 $_SESSION['listHoraires'] = $listHoraires;
 $_SESSION['listDates'] = $listDates;
-$_SESSION['listHumidite'] = $listHumidite;
-$_SESSION['listTemperatur'] = $listTemperature;
+$_SESSION['listC02'] = $listC02;
+$_SESSION['listTemperature'] = $listTemperature;
 
 header('Location: http://172.10.10.56/pbs/historique.php');
 

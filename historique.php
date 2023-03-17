@@ -4,6 +4,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 $listHoraires = $_SESSION['listHoraires'];
+$listC02 = $_SESSION['listC02']; 
+$listTemperature = $_SESSION['listTemperature'];
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +24,10 @@ $listHoraires = $_SESSION['listHoraires'];
     <script type='text/javascript'>
         var listHoraires = <?php echo json_encode($listHoraires); ?>;
         console.log(listHoraires);
+        var listC02 = <?php echo json_encode($listC02); ?>;
+        console.log(listC02);
+        var listTemperature = <?php echo json_encode($listTemperature); ?>;
+        console.log(listTemperature);
     </script>
 
 <div class="canvasDiv loginLabel">
@@ -49,9 +55,9 @@ console.log(compteur);
     var tempChart = new Chart("tempChart", {
     type: "line",
     data: {
-        labels: compteur,
+        labels: listHoraires,
         datasets: [{
-        data: [],
+        data: listTemperature,
         borderColor: "magenta",
         fill: false
         }]
@@ -66,9 +72,9 @@ console.log(compteur);
 var co2Chart = new Chart("co2Chart", {
     type: "line",
     data: {
-        labels: compteur,
+        labels: listHoraires,
         datasets: [{
-        data: [],
+        data: listC02,
         borderColor: "black",
         fill: false
         }]
