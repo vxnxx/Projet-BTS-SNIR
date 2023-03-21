@@ -36,6 +36,8 @@ body::after {
 
 .svgDiv {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 5rem;
   width: 12.5rem;
   display: flex;

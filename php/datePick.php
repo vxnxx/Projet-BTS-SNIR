@@ -42,6 +42,7 @@ $_SESSION['listHoraires'] = $listHoraires;
 $_SESSION['listDates'] = $listDates;
 $_SESSION['listC02'] = $listC02;
 $_SESSION['listTemperature'] = $listTemperature;
+$_SESSION['salle'] = $salle;
 
 header('Location: http://172.10.10.56/pbs/historique.php');
 

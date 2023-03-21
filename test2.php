@@ -61,9 +61,9 @@ if (empty($_SESSION['utilisateur'])) {
 ');
 
 $select = $_POST['classeSelect'];
-$login = $_SESSION['utilisateur'];
+$utilisateur = $_SESSION['utilisateur'];
 
-echo ("<span class=\"center loginLabel phpLabel mt-2\">Vous etes $login et vous avez choisis la classe n°$select</span>");
+echo ("<span class=\"center loginLabel phpLabel mt-2\">Vous etes $utilisateur et vous avez choisis la classe n°$select</span>");
 ?>
 
 

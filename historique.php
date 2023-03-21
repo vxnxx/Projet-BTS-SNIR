@@ -6,6 +6,8 @@ session_start();
 $listHoraires = $_SESSION['listHoraires'];
 $listC02 = $_SESSION['listC02']; 
 $listTemperature = $_SESSION['listTemperature'];
+$utilisateur = $_SESSION['utilisateur'];
+$salle = $_SESSION['salle'];
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +47,9 @@ $listTemperature = $_SESSION['listTemperature'];
         </g>
       </svg>
     </div>
+    <?php
+    echo ("<span class=\"center loginLabel phpLabel mt-2\">Vous etes $utilisateur et vous avez choisis la classe n°$salle</span>");
+    ?>
     <script type='text/javascript'>
         var listHoraires = <?php echo json_encode($listHoraires); ?>;
         console.log(listHoraires);
