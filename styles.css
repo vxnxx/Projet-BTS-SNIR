@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap');
 
-:root {
-  --primary:#6200EE;
-  --primaryVariant:3700B3;
-}
 
 * {
   margin: 0;
@@ -85,7 +81,8 @@ body::after {
 }
 
 input:focus {
-  border:3px solid #f257ff;
+  border:2px solid #f257ff;
+  transform: scale(1.05);
 }
 
 input {
@@ -97,6 +94,7 @@ input {
   width: 100%;
   height: 2.5rem;
   outline: none;
+  transition: ease-in-out 0.2s;
 }
 
 input[type="submit"] {
@@ -105,6 +103,7 @@ input[type="submit"] {
   color: white;
   border:none;
   font-size:medium;
+  transition: ease-in-out 0.2s;
 }
 
 .bouton {
@@ -128,6 +127,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #f257ff;
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 
@@ -155,7 +155,7 @@ input[type="submit"]:hover {
 }
 
 .classeSelect:focus {
-  border:3px solid #f257ff;
+  border:2px solid #f257ff;
 }
 
 .center {
@@ -213,6 +213,10 @@ input[type="submit"]:hover {
 
   .topLoginContainer {
     margin: 0 0 5vh 0;
+  }
+
+  .svgDiv {
+    display: none;
   }
 
 
