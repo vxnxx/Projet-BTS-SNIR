@@ -8,6 +8,7 @@ session_start();
 $date = $_POST['date'];
 $salle = $_POST['classeSelect']; 
 
+
 $sql = "SELECT * FROM Valeurs WHERE date = '$date' AND salle = '$salle'";
 
 $con = mysqli_connect('172.10.10.82', 'evan1', 'feur', 'AirQuality');
@@ -15,7 +16,14 @@ if ($con->connect_error) {
     die("Erreur : 1conn->connect_error");
 }
 
-$result = $con->query($sql);
+$sanitizedDate = mysqli_real_escape_string($con, $date); 
+$sanitizedSalle = mysqli_real_escape_string($con, $salle); 
+
+$sql = "SELECT * FROM Valeurs WHERE date = ? AND salle = ?";
+$stmt = $con->prepare($sql);
+$stmt->bind_param("ss", $sanitizedDate, $sanitizedSalle);
+$stmt->execute();
+$result = $stmt->get_result();
 
 $requetes = [];
 

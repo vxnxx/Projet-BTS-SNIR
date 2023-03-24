@@ -38,6 +38,7 @@
       </svg>
     </div>
     <form class="form mt-2" action="php/datePick.php" method="post">
+      
         
         <label class="phpLabel">Veuillez choisir la salle et la date pour laquelle vous désirez voir l'historique</label>
 

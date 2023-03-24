@@ -16,14 +16,17 @@ if ($con->connect_error) {
     die("Erreur : 1conn->connect_error");
 }
 
-$creds = ($con->real_query("SELECT `MotDePasse` FROM `Credentials` WHERE `NomUtilisateur` = '$login'"));
-$results = $con->use_result();
+$sanitizedLogin = mysqli_real_escape_string($con, $login);
+
+$stmt = $con->prepare("SELECT `MotDePasse` FROM `Credentials` WHERE `NomUtilisateur` = ?");
+$stmt->bind_param("s", $sanitizedLogin);
+$stmt->execute();
+$results = $stmt->get_result();
+
 
 foreach($results as $row) {
     $sqlPassword = $row['MotDePasse'];
 }
-
-echo($sqlPassword);
 
 if (empty($login) || empty($password)) {
     $isEmpty = True;
