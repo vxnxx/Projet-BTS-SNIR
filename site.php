@@ -17,7 +17,7 @@ if (empty($_SESSION['utilisateur'])) {
     <div class="topLoginContainer">
       <span class="welcome">Veuillez vous connecter avant d'acceder a AirQuality</span>
       <span class="slogan"> Vous ne pouvez pas acceder a ce contenu si vous n'etes pas connecté a un compte</span>
-      <a href="http://172.10.10.54/pbs/index.html">
+      <a href="http://172.10.10.56/pbs/index.php">
         <button class="bouton" type="button">Retourner a l'accueil</button>
       </a>
     </div>
@@ -40,7 +40,7 @@ if (empty($_SESSION['utilisateur'])) {
   </head>
 
   <body>
-  <div class="svgDiv">
+  <div class="svgDiv" onclick="window.location.href = 'http://172.10.10.56/pbs';">
       <svg
         class="logoSvg"
         xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ if (empty($_SESSION['utilisateur'])) {
         </g>
       </svg>
     </div>
-    <form class="form center" action="http://172.10.10.56/pbs/test2.php" method="post">
+    <form class="form center" action="http://172.10.10.56/pbs/liveCharts.php" method="post">
       <div class="selectDiv">
         <label class="loginLabel classeSelect">Salle : </label>
         <select class="classeSelect" name="classeSelect">

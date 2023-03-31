@@ -1,4 +1,32 @@
 <?php
+session_start();
+if (empty($_SESSION['utilisateur'])) {
+?>
+  <!DOCTYPE html>
+  <html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Veuillez vous connecter !</title>
+  </head>
+
+  <body>
+    <div class="topLoginContainer">
+      <span class="welcome">Veuillez vous connecter avant d'acceder a AirQuality</span>
+      <span class="slogan"> Vous ne pouvez pas acceder a ce contenu si vous n'etes pas connecté a un compte</span>
+      <a href="http://172.10.10.56/pbs/index.php">
+        <button class="bouton" type="button">Retourner a l'accueil</button>
+      </a>
+    </div>
+  </body>
+
+  </html>
+<?php
+} else {
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -23,7 +51,7 @@ $salle = $_SESSION['salle'];
 </head>
 
 <body>
-<div class="svgDiv">
+<div class="svgDiv" onclick="window.location.href = 'http://172.10.10.56/pbs';">
       <svg
         class="logoSvg"
         xmlns="http://www.w3.org/2000/svg"
@@ -127,3 +155,6 @@ var co2Chart = new Chart("co2Chart", {
 </body>
 
 </html>
+
+<?php
+} ?>

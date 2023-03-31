@@ -34,7 +34,7 @@ if (empty($_SESSION['utilisateur'])) {
 <body>
   <?php
   echo('
-  <div class="svgDiv">
+  <div class="svgDiv" onclick="window.location.href = \'http://172.10.10.56/pbs\';">
   <svg
     class="logoSvg"
     xmlns="http://www.w3.org/2000/svg"
