@@ -25,12 +25,34 @@ if (empty($_SESSION['utilisateur'])) {
 
   </html>
 <?php
+} else if($_SESSION['listHoraires'] == [] || $_SESSION['listC02'] == [] || $_SESSION['listTemperature'] == []) {
+?>
+  <!DOCTYPE html>
+  <html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Veuillez vous connecter !</title>
+  </head>
+
+  <body>
+    <div class="topLoginContainer">
+      <span class="welcome">Oups ! il semblerait qu'aucune données n'as été trouvée</span>
+      <span class="slogan">Veuillez selectionner une autre date/salle </span>
+      <a href="http://172.10.10.56/pbs/site.php">
+        <button class="bouton" type="button">Choisir une autre date/salle</button>
+      </a>
+    </div>
+  </body>
+  <?php
 } else {
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-session_start();
 $listHoraires = $_SESSION['listHoraires'];
 $listC02 = $_SESSION['listC02']; 
 $listTemperature = $_SESSION['listTemperature'];
