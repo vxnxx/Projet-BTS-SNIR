@@ -1,35 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap');
+/* Définition des variables CSS */
+:root {
+  --text-color: black; /* Couleur du texte */
+  --slogan-color: rgb(71 85 105/1); /* Couleur du slogan */
+  --bg-color: white; /* Couleur de fond */
+  --bg-opacity: 0.35; /* Opacité du fond */
+  --input-color: white; /* Couleur de fond des inputs */
+  --input-border: #e5e7eb; /* Couleur de bordure des inputs */
+  --input-text-color: black; /* Couleur du texte des inputs */
+  --grid-color: #616161; /* Couleur de la grille */
+}
 
-
+/* Réinitialisation des marges et paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Ajout d'un fond d'écran avec une image */
 body::after {
   content: "";
   background: url("img/boreal.png");
   background-repeat: no-repeat;
   background-size: 110%;
-  opacity: 0.35;
+  background-color: var(--bg-color);
+  opacity: var(--bg-opacity);
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
   z-index: -1;   
+  transition: ease-in-out 0.2s;
 }
 
-
+/* Définition des classes pour les éléments SVG */
 .cls-1{fill:#9a00ff;}
 .cls-2{fill:#f257ff;opacity:0.5;}
 .cls-3{font-size:136.19px;font-family:Inter;}
 
+/* Style pour le logo SVG */
 .logoSvg {
   height:3.5rem;
+  color: var(--text-color);
 }
 
+/* Style pour le conteneur du logo SVG */
 .svgDiv {
   position: absolute;
   top: 0;
@@ -40,8 +57,10 @@ body::after {
   justify-content: center;
   align-items: center;
   cursor:pointer;
+  color: var(--text-color);
 }
 
+/* Style pour le conteneur du formulaire de connexion */
 .topLoginContainer {
   height: 15rem;
   display: flex;
@@ -53,26 +72,29 @@ body::after {
   margin: 0 2rem 0 2rem;
 }
 
+/* Style pour le texte de bienvenue */
 .welcome {
   font-family: "Inter";
   font-weight: 800;
   font-size: 3.5rem;
-
+  color: var(--text-color);
 }
 
+/* Style pour le slogan */
 .slogan {
   font-family: Inter;
-  color:rgb(71 85 105/1);
+  color: var(--slogan-color);
   font-size: 1.125rem;
 }
 
-
+/* Style pour le conteneur du formulaire */
 .loginContainer {
   margin: auto;
   width: 60vw;
   border-radius: 2%;
 }
 
+/* Style pour le formulaire */
 .form {
   margin: auto;
   display: flex;
@@ -81,14 +103,17 @@ body::after {
   width: 30%;
 }
 
+/* Style pour les inputs lorsqu'ils sont focus */
 input:focus {
   border:2px solid #f257ff;
   transform: scale(1.05);
 }
 
+/* Style pour les inputs */
 input {
   border-radius: 0.375rem;
-  border: 0.5px solid #e5e7eb;
+  border: 0.5px solid var(--input-border);
+  background-color : var(--input-color);
   box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.08);
   font-family: Inter;
   padding: 0 0.375rem 0 0.375rem;
@@ -96,8 +121,10 @@ input {
   height: 2.5rem;
   outline: none;
   transition: ease-in-out 0.2s;
+  color: var(--input-text-color);
 }
 
+/* Style pour le bouton de soumission */
 input[type="submit"] {
   background-color: #C52BFF;
   box-shadow: 0px 2px 6px -1px rgba(154, 0, 255, 1);
@@ -107,6 +134,7 @@ input[type="submit"] {
   transition: ease-in-out 0.2s;
 }
 
+/* Style pour le bouton */
 .bouton {
   background-color: #C52BFF;
   box-shadow: 0px 2px 6px -1px rgba(154, 0, 255, 1);
@@ -120,30 +148,28 @@ input[type="submit"] {
   margin:auto;
 }
 
+/* Style pour le bouton lorsqu'il est survolé */
 .bouton:hover {
   background-color: #f257ff;
   cursor: pointer;
 }
 
+/* Style pour le bouton de soumission lorsqu'il est survolé */
 input[type="submit"]:hover {
   background-color: #f257ff;
   cursor: pointer;
   transform: scale(1.05);
 }
 
-
-
+/* Style pour le label du formulaire */
 .loginLabel {
   font-family: Inter;
   font-size: .875rem;
+  color: var(--slogan-color);
+  background-color: none;
 }
 
-.feurtest {
-  border: 1px solid red;
-  width: 50%;
-  height: 50%;
-}
-
+/* Style pour la sélection de classe */
 .classeSelect {
   position: relative;
   top: 50px;
@@ -151,20 +177,24 @@ input[type="submit"]:hover {
   font-size: .875rem;
   border-radius: .375rem;
   height: 1.750rem;
-  background-color: white;
+  background-color: var(--input-color);
+  color: var(--input-text-color);
   outline: none;
 }
 
+/* Style pour la sélection de classe lorsqu'elle est focus */
 .classeSelect:focus {
   border:2px solid #f257ff;
 }
 
+/* Style pour centrer les éléments */
 .center {
   display:flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Style pour le conteneur du canvas */
 .canvasDiv {
   margin: 5rem;
   display: flex;
@@ -173,52 +203,237 @@ input[type="submit"]:hover {
   flex-direction:column;
 }
 
+/* Style pour le label PHP */
 .phpLabel {
   font-size: 1rem;
   font-family: Inter;
   text-align: center;
+  color: var(--text-color);
 }
 
+/* Style pour les messages d'erreur */
 .error {
   font-family: Inter;
   text-align: center;
   color: red;
 }
 
+/* Style pour les marges top de 2rem */
 .mt-2 {
   margin-top: 2rem;
 }
 
+/* Style pour les marges bottom de 2rem */
 .mb-2 {
   margin-bottom: 2rem;
 }
 
+/* Style pour l'historique */
 .hist {
   position: relative;
   top: 15px;
+  width: 80%
 }
 
+/* Style pour le positionnement relatif en haut */
+.reltop {
+  position: relative;
+  top: 50px;
+}
+
+/* Style pour centrer les éléments */
 .divCenter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Style pour le calendrier Flatpickr */
+.flatpickr-calendar {
+  font-family: Inter;
+}
+
+/* Style pour le bouton de mode sombre */
+.darkmode-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  height: 3rem;
+}
+
+/* Style pour les images dans les boîtes */
+.img-in-box {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation de rotation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* Style pour l'image lorsqu'elle est active */
+#img:active {
+  animation: rotate 0.2s ease-in-out;
+}
+
+/* Style pour le taux d'humidité */
+#tauxHumidite {
+  transform: translateY(-6rem);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Style pour le canvas d'humidité */
+#humiditeCanva {
+  position: absolute;
+  right: 1vw;
+  top: 10vh;
+  margin-left : 1rem;
+}
+
+/* Style pour le conteneur Flat */
+.flat {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout {
+  position: absolute;
+  top: 1rem;
+  right: 5rem;
+  width: 10rem;
+  padding: 0.5rem;
+}
 
 
-@media screen and (max-width: 650px) {
+
+/* Media queries pour les écrans de petite taille */
+@media screen and (max-width: 1235px) {
+  #humiditeCanva {
+    margin-top: 10rem;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 772px) {
+  #humiditeCanva {
+    margin-top: 10rem;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+
+  /* Style pour le formulaire lorsqu'il est en petit écran */
   .form{
     width: 100%;
-    margin: 5vh 0 0 0;
+    margin: 0 auto 0 auto;
   }
 
+  /* Style pour le slogan lorsqu'il est en petit écran */
+  .slogan {
+    margin: 0 2rem 0 2rem;
+  }
+
+  /* Style pour le texte de bienvenue lorsqu'il est en petit écran */
+  .welcome {
+    font-size: 2.5rem;
+  }
+
+  /* Style pour le bouton de soumission lorsqu'il est en petit écran */
+  input[type="submit"] {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Style pour le conteneur du formulaire de connexion lorsqu'il est en petit écran */
   .topLoginContainer {
-    margin: 0 0 5vh 0;
+    margin: 8vh 2vw 0 2vw;
   }
 
-  .svgDiv {
-    display: none;
+  /* Style pour la sélection de classe lorsqu'elle est en petit écran */
+  .classeSelect {
+    margin: 4rem 0 0 0;
+    font-size: 0.75rem;
   }
 
-
+  /* Style pour le label PHP lorsqu'il est en petit écran */
+  .phpLabel {
+    margin: 2vh 0 0 0;
   }
+
+  /* Style pour l'historique lorsqu'il est en petit écran */
+  .hist {
+    margin: 0;
+  }
+
+  /* Style pour les marges bottom de 2rem lorsqu'il est en petit écran */
+  .mb-2 {
+    margin-top: 8vh;
+    width: 80%;
+  }
+
+  /* Style pour le conteneur du canvas lorsqu'il est en petit écran */
+  .canvasDiv {
+    margin: 0;
+    width: 100%;
+  }
+
+  /* Style pour le graphique de température lorsqu'il est en petit écran */
+  #tempChart {
+    width: 100%;
+  }
+
+  /* Style pour le graphique de CO2 lorsqu'il est en petit écran */
+  #co2Chart {
+    width: 100%;
+  }
+
+  /* Style pour le canvas d'humidité lorsqu'il est en petit écran */
+  #humiditeCanva {
+    margin-top: 15rem;
+    transform: scale(0.8);
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+
+  /* Style pour le conteneur du live lorsqu'il est en petit écran */
+  #topLive {
+    margin-top: 10vh;
+  }
+
+  /* Style pour le conteneur Flat lorsqu'il est en petit écran */
+  .flat {
+    width: 80%;
+  }
+
+  /* Style pour le taux d'humidité lorsqu'il est en petit écran */
+  #tauxHumidite {
+    transform: translateY(-8rem);
+  }
+
+  .logout input[type="submit"] {
+    position: absolute;
+    width: 13rem;
+    padding: 0.5rem;
+    transform: scale(0.5);
+  }
+}

@@ -17,7 +17,7 @@ if (empty($_SESSION['utilisateur'])) {
     <div class="topLoginContainer">
       <span class="welcome">Veuillez vous connecter avant d'acceder a AirQuality</span>
       <span class="slogan"> Vous ne pouvez pas acceder a ce contenu si vous n'etes pas connecté a un compte</span>
-      <a href="http://172.10.10.56/pbs/index.php">
+      <a href="http://172.10.10.56/AirQuality/index.php">
         <button class="bouton" type="button">Retourner a l'accueil</button>
       </a>
     </div>
@@ -42,7 +42,7 @@ if (empty($_SESSION['utilisateur'])) {
     <div class="topLoginContainer">
       <span class="welcome">Oups ! il semblerait qu'aucune données n'as été trouvée</span>
       <span class="slogan">Veuillez selectionner une autre date/salle </span>
-      <a href="http://172.10.10.56/pbs/site.php">
+      <a href="http://172.10.10.56/AirQuality/site.php">
         <button class="bouton" type="button">Choisir une autre date/salle</button>
       </a>
     </div>
@@ -73,7 +73,7 @@ $salle = $_SESSION['salle'];
 </head>
 
 <body>
-<div class="svgDiv" onclick="window.location.href = 'http://172.10.10.56/pbs';">
+<div class="svgDiv" onclick="window.location.href = 'http://172.10.10.56/AirQuality/site.php';">
       <svg
         class="logoSvg"
         xmlns="http://www.w3.org/2000/svg"
@@ -97,8 +97,17 @@ $salle = $_SESSION['salle'];
         </g>
       </svg>
     </div>
+    <div class="darkmode-btn">
+      <img id="img" class="img-in-box" src="img/dark.png" onclick="tgm()">
+    </div>
+
+    <form class="logout" action="http://172.10.10.56/AirQuality/php/logout.php" method="post">
+      <input class="" type="submit" value="Se déconnecter" name="deconnexion" />
+    </form>
+
+    <script src="js/keepDarkMode.js"></script>
     <?php
-    echo ("<span class=\"center loginLabel phpLabel mt-2\">Vous etes $utilisateur et vous avez choisis la classe n°$salle</span>");
+    echo ("<span class=\"center loginLabel phpLabel mt-2\" id=\"topLive\">Vous etes $utilisateur et vous avez choisis la classe n°$salle</span>");
     ?>
     <script type='text/javascript'>
         var listHoraires = <?php echo json_encode($listHoraires); ?>;
@@ -122,18 +131,20 @@ $salle = $_SESSION['salle'];
   <button onclick="window.location.href = 'site.php';" class="bouton" >Revenir en arrière</button>
   </div>
 
+  <script src="js/darkMode.js"></script>
+
 
   
   <script type='text/javascript'>
 var compteur = [];
 var total = 1;
 
+
 for (let i = 0; i < listHoraires.length; i++) {
     compteur[i] = total;
     total++;
 }
 
-console.log(compteur);
 
     var tempChart = new Chart("tempChart", {
     type: "line",
@@ -141,13 +152,30 @@ console.log(compteur);
         labels: listHoraires,
         datasets: [{
         data: listTemperature,
-        borderColor: "magenta",
+        borderColor: "#9a00ff",
         fill: false
         }]
     },
     options: {
         legend: {
         display: false
+        },
+        scales: {
+        yAxes: [{
+          gridLines: {
+            color: "#616161",
+          },
+        }],
+        xAxes: [{
+          gridLines: {
+            color: "#616161",
+          },
+        }]
+        },
+        elements: {
+          point:{
+              radius: 0
+          }
         }
     }
 });
@@ -158,13 +186,29 @@ var co2Chart = new Chart("co2Chart", {
         labels: listHoraires,
         datasets: [{
         data: listC02,
-        borderColor: "black",
+        borderColor: "#919191",
         fill: false
         }]
     },
     options: {
         legend: {
         display: false
+        },scales: {
+        yAxes: [{
+          gridLines: {
+            color: "#616161",
+          },
+        }],
+        xAxes: [{
+          gridLines: {
+            color: "#616161",
+          },
+        }]
+        },
+        elements: {
+          point:{
+              radius: 0
+          }
         }
     }
 });
